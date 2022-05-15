@@ -3,10 +3,10 @@ const path = require("path");
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const fruitsRouter = require("./routes/fruits.js");
+const PartisipentsRouter = require("./routes/Partisipents.js");
 
 // Konfiguration
-const PORT = process.env.PORT || 1515;
+const PORT = process.env.PORT || 7878;
 const distPath = path.join(__dirname, "/../dist/");
 console.log("distpath:", distPath);
 
@@ -25,7 +25,7 @@ app.use(express.static(distPath));
 app.use("/img", express.static(path.join(__dirname, "/hamsterImages/")));
 
 // Endpoints
-app.use("/fruits", fruitsRouter);
+app.use("/Partisipents", PartisipentsRouter);
 // Saknas: /hamsters, /matches
 
 // Övriga endpoints, för att fungera med React Router i frontend
